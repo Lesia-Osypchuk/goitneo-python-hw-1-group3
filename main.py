@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 from collections import defaultdict
 
 def get_birthdays_per_week(users):
+    
     if not users:
         return {}
     today = datetime.today().date()
@@ -26,6 +27,11 @@ def get_birthdays_per_week(users):
                 day_of_week = birthday_date.strftime("%A")
 
             birthdays_per_week[day_of_week].append(name)
+            
+    for day, names in birthdays_per_week.items():
+        if names:
+            print(f"{day}: {', '.join(names)}")
+        else:
+            print(f"No birthdays on {day}")
 
-    return birthdays_per_week
    
