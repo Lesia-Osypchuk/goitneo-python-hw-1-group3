@@ -33,5 +33,6 @@ def get_birthdays_per_week(users):
             print(f"{day}: {', '.join(names)}")
         else:
             print(f"No birthdays on {day}")
+            
 
    
